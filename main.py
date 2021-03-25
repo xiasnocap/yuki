@@ -11,7 +11,46 @@
     The software licensed under Mozilla Public License Version 2.0
 """
 
-Admin = [""]
+
+botStart = time.time()
+cl = LINE("robertghanim582@icloud.com","36091vwz")
+#cl = LINE("YOUR TOKEN")
+#cl = LINE("Email","Password")
+
+cl.log("Auth Token : " + str(cl.authToken))
+channelToken = cl.getChannelResult()
+readOpen = codecs.open("read.json","r","utf-8")
+cl.log("Channel Token : " + str(channelToken))
+settingsOpen = codecs.open("temp.json","r","utf-8")
+
+clMID = cl.profile.mid
+clProfile = cl.getProfile()
+clSettings = cl.getSettings()
+oepoll = OEPoll(cl)
+call = cl
+read = json.load(readOpen)
+settings = json.load(settingsOpen)
+
+connect1 = 'CHROME'
+Headers1 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "CROMEOS\t2.1.5ARIFISTIFIK\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
+connect2 = 'WIN'
+Headers2 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "DESKTOPWIN\t5.5.5ARIFISTIFIK\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
+connect3 = 'ios'
+Headers3 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "IOSIPAD\t8.14.2\tiPhone OS\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
+
+Admin = ["u0dedae6e6ff204f52f2e4a096630ea82"]
 KickLimit = 10
 CancelLimit = 10
 Language = "en"
